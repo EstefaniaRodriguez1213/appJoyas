@@ -1,6 +1,6 @@
 import { React, useState } from "react";
+import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 
 const ItemCount = ({ stock, onAdd }) => {
   const [cont, setCont] = useState(0);
@@ -21,17 +21,13 @@ const ItemCount = ({ stock, onAdd }) => {
 
   return (
     <div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="img/trepadores.webp" />
-        <Card.Body>
-          <Card.Title>Trepadores Mariposa</Card.Title>
-          <Card.Text>Trepadores de Plata y Oro.</Card.Text>
-          <Button onClick={handleLess}>-</Button> {cont}
-          <Button onClick={handleAdd}>+</Button>
-        </Card.Body>
-        <Card.Text>Stock {stock}</Card.Text>
+      <div>
+        <Button onClick={handleLess}>-</Button> {cont}
+        <Button onClick={handleAdd}>+</Button>
+      </div>
+      <div>
         <Button onClick={() => onAdd(cont)}>Confirmar</Button>
-      </Card>
+      </div>
     </div>
   );
 };

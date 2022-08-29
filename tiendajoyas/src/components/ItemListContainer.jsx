@@ -1,13 +1,21 @@
-import { React } from "react";
-import ItemCount from "./ItemCount";
+import { React, useState, useEffect } from "react";
+import ItemList from "./ItemList";
+import productos from "./Productos";
 
-const ItemListContainer = ({ nombre }) => {
-  function onAdd(cont) {
-    console.log(`Se han seleccionado ${cont} productos`);
-  }
+const ItemListContainer = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const getData = new Promise((res) => {
+      res(productos);
+    });
+    getData
+      .then((res) => setData(res))
+      .catch((error) => console.error("ocurrio algo inesperado"));
+  }, []);
   return (
-    <div>
-      <ItemCount stock={5} onAdd={onAdd}></ItemCount>
+    <div className="container">
+      <ItemList data={data}></ItemList>
     </div>
   );
 };
