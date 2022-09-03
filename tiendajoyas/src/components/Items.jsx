@@ -1,6 +1,6 @@
 import React from "react";
-import ItemCount from "./ItemCount";
 import Card from "react-bootstrap/Card";
+import { Button } from "react-bootstrap";
 
 const Items = ({ productos }) => {
   return (
@@ -9,9 +9,7 @@ const Items = ({ productos }) => {
         <Card.Img variant="top" src={productos.image} />
         <Card.Body>
           <Card.Title>{productos.nombreArticulo}</Card.Title>
-          <Card.Text>{productos.descripcion}</Card.Text>
-          <Card.Text>Precio: ${productos.precio}</Card.Text>
-          <ItemCount stock={productos.stock}></ItemCount>
+          <Button variant="primary">Ver detalle</Button>
         </Card.Body>
       </Card>
     </div>
