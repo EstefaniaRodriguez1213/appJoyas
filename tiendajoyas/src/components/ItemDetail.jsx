@@ -3,6 +3,10 @@ import ItemCount from "./ItemCount";
 import Card from "react-bootstrap/Card";
 
 const ItemDetail = ({ data2 }) => {
+
+function onAdd(cont){
+console.log('Id de Producto: ' + data2.id + ' Cantidad: '+ cont)
+}
   return (
     <div>
       <Card style={{ width: "18rem" }}>
@@ -12,8 +16,10 @@ const ItemDetail = ({ data2 }) => {
           <Card.Text>{data2.descripcion}</Card.Text>
           <Card.Text>Precio: ${data2.precio}</Card.Text>
           <Card.Text>Stock: {data2.stock}</Card.Text>
-          <ItemCount stock={data2.stock}></ItemCount>
+          <ItemCount stock={data2.stock} onAdd={onAdd}></ItemCount>
         </Card.Body>
+        <div>
+      </div>
       </Card>
     </div>
   );

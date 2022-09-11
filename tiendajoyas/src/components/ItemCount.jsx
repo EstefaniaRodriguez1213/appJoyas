@@ -18,6 +18,10 @@ const ItemCount = ({ stock, onAdd }) => {
     }
   }
 
+  function handonAdd(){
+    onAdd(cont)   
+}
+
   return (
     <div>
       <div>
@@ -25,7 +29,7 @@ const ItemCount = ({ stock, onAdd }) => {
         <Button onClick={handleAdd}>+</Button>
       </div>
       <div>
-        <Button onClick={() => onAdd(cont)}>Agregar al carrito</Button>
+      <Button onClick={handonAdd}>Agregar al carrito</Button>
       </div>
     </div>
   );
