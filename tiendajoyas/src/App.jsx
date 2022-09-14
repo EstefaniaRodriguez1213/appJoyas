@@ -4,6 +4,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Carrousel from "./components/Carrousel";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
       <NavBar></NavBar>
         <Routes>
+          <Route path="/" element={<Carrousel></Carrousel>}></Route>
           <Route path="/productos" element={<ItemListContainer></ItemListContainer>}>
           </Route>
           <Route path="/categoria/:categoria" element={<ItemListContainer></ItemListContainer>}>

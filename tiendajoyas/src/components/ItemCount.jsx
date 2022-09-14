@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import Button from "react-bootstrap/Button";
+import Alert from 'react-bootstrap/Alert';
 
 const ItemCount = ({ stock, onAdd }) => {
   const [cont, setCont] = useState(0);
@@ -19,13 +20,16 @@ const ItemCount = ({ stock, onAdd }) => {
   }
 
   function handonAdd(){
+    <Alert variant="success" >
+      Tu producto se agrego al carrito
+    </Alert>
     onAdd(cont)   
 }
 
   return (
     <div>
       <div>
-        <Button onClick={handleLess}>-</Button> {cont}
+        <Button onClick={handleLess}>-</Button>  {cont}  {' '}
         <Button onClick={handleAdd}>+</Button>
       </div>
       <div>
