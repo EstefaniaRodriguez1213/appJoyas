@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Carrousel from "./components/Carrousel";
+import CartView from "./components/CartView";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           </Route>
           <Route path="/detalles/:id" element={<ItemDetailContainer></ItemDetailContainer>}>
           </Route>
+          <Route path="/cart" element={<CartView></CartView>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
