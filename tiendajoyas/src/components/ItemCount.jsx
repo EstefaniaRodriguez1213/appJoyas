@@ -20,9 +20,6 @@ const ItemCount = ({ stock, onAdd }) => {
   }
 
   function handonAdd(){
-    <Alert variant="success" >
-      Tu producto se agrego al carrito
-    </Alert>
     onAdd(cont)   
 }
 
