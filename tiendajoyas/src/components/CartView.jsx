@@ -18,14 +18,14 @@ const CartView = () => {
         </tr>
       </thead>
       <tbody>
-      {cart.map((item) => 
+      {/* {cart.map((item) => 
             <tr key={item.item.id}>                                                    
                 <td>{item.item.nombreArticulo}</td>
                 <td>{item.cant}</td>
                 <td>{item.item.precio}</td>
                 <td><CloseButton onClick={() => quitarProductoCarrito(item.id)} /></td>
             </tr>
-                )} 
+                )}  */}
              <tr>
                 {/* <td colSpan="6"> <p className= "d-flex justify-content-center">  TOTAL: $ {precioTotal()}</p></td> */}
              </tr> 
