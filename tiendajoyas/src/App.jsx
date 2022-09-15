@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Carrousel from "./components/Carrousel";
 import CartView from "./components/CartView";
+import FinCompra from "./components/FinCompra";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/detalles/:id" element={<ItemDetailContainer></ItemDetailContainer>}>
           </Route>
           <Route path="/cart" element={<CartView></CartView>}></Route>
+          <Route path="/fincompra" element={<FinCompra></FinCompra>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

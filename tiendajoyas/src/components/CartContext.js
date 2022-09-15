@@ -8,26 +8,33 @@ const CartProvider = (props) => {
 
     const agregarProductoCarrito = (producto,cant) => {  
         if(isInCart(producto.id)){
-            console.log("El producto seleccionado ya existe en el carrito")
             setCart(cart.map(product=>{
                 return producto.id === product.id ? {...product, cant: product.cant + 1, stock: product.stock - cant} : product
             })); 
         }else{
-            console.log("No existe en el carrito")
             setCart([...cart, {...producto, cant}]) 
         }
     }
     const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
     
-    const quitarProductoCarrito = (producto) => {
-        setCart(cart.slice(cart.filter(item => item.id !== producto.id)));
+    const quitarProductoCarrito = (id) => {
+        setCart(cart.filter(item => item.id !== id));
     }
     const limpiar = () =>{
         setCart([]);
     }
+    const precioTotal = () => {
+        return cart.reduce((previus, current) => (previus + (current.cant * current.precio)), 0)
+    }
+    const cantidadTotal = () => {
+        return cart.reduce((previus, current) => (previus + (current.cant)), 0)
+    }
+    const cantidadArticulosCarrito = () => {
+            return (cart.length)
+    }
     return (
         <>
-           <CartContext.Provider value={{cart, agregarProductoCarrito, quitarProductoCarrito, limpiar}}>
+           <CartContext.Provider value={{cart, agregarProductoCarrito, quitarProductoCarrito, limpiar, precioTotal, cantidadArticulosCarrito,cantidadTotal}}>
                 {props.children}
            </CartContext.Provider> 
         </>
