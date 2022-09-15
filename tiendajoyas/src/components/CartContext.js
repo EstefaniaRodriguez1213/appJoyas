@@ -7,17 +7,20 @@ const CartProvider = (props) => {
     const [cart, setCart] = useState([]);
 
     const agregarProductoCarrito = (producto,cant) => {  
-        if (cart.filter(item => item.id === producto.id)){
-            let newCant = cant + 1;
-            cant = newCant;
-        }   
-        else{
-            setCart(cart.push(producto,cant));
+        if(isInCart(producto.id)){
+            console.log("El producto seleccionado ya existe en el carrito")
+            setCart(cart.map(product=>{
+                return producto.id === product.id ? {...product, cant: product.cant + 1, stock: product.stock - cant} : product
+            })); 
+        }else{
+            console.log("No existe en el carrito")
+            setCart([...cart, {...producto, cant}]) 
         }
-        console.log(cart)
     }
+    const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
+    
     const quitarProductoCarrito = (producto) => {
-        setCart(cart.slice(cart.findIndex(item => item.id === producto.id), 1));
+        setCart(cart.slice(cart.filter(item => item.id !== producto.id)));
     }
     const limpiar = () =>{
         setCart([]);
