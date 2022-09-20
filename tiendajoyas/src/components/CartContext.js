@@ -8,9 +8,12 @@ const CartProvider = (props) => {
 
     const agregarProductoCarrito = (producto,cant) => {  
         if(isInCart(producto.id)){
-            setCart(cart.map(product=>{
-                return producto.id === product.id ? {...product, cant: product.cant + 1, stock: product.stock - cant} : product
-            })); 
+            // setCart(cart.map(product=>{
+            //     return producto.id === product.id ? {...product, cant: product.cant + 1, stock: product.stock - cant} : product
+            // })); 
+                const findCart = cart.find(product => product.id === producto.id)
+                findCart.cant = findCart.cant + cant
+                setCart([...cart])
         }else{
             setCart([...cart, {...producto, cant}]) 
         }
