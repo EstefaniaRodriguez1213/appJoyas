@@ -1,24 +1,26 @@
 import { React, useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import productos from "./Productos";
-import { useParams } from "react-router-dom";
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
-  const {categoria} = useParams();
+  const [categoria, setCategoria] = useState([]);
+
   useEffect(() => {
-    const getData = new Promise((res) => {
+    const db = getFirestore()
+        const itemCollection = collection(db, "productos");
+
       if (categoria){
-        res(productos.filter(producto => producto.categoria === categoria));
+        const productFilter = query(itemCollection, where('categoria', '==', categoria))
+            getDocs(productFilter)
+                .then((res) => setCategoria(res.docs.map((product) => ({ id: product.id, ...product.data() }))))
+                .catch((error) => console.error(error))
       }
       else {
-        res(productos);
+        getDocs(itemCollection)
+                .then((res) => setData(res.docs.map((product) => ({ id: product.id, ...product.data() }))))
+                .catch((error) => console.error(error))
       }
-     
-    });
-    getData
-      .then((res) => setData(res))
-      .catch((error) => console.error("ocurrio algo inesperado"));
   }, [categoria]);
   return (
     <div className="container">

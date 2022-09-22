@@ -1,23 +1,19 @@
 import { React, useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import productos from "./Productos.js";
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
   const [data2, setData] = useState([]);
-
-  const {id} = useParams();
+  const { id } = useParams()
+ 
 
   useEffect(() => {
-    const getData = new Promise((res) => {
-      res(productos);
-    });
- 
-     getData
-       .then((res) => setData(res.find((product) => product.id === Number(id))))
-       .catch((err) => console.error(`Ocurrio el siguiente error: ${err}`));
-   }, []);
-
+    const productdb = getFirestore()
+    const prodcuctDoc = doc(productdb, 'productos', id)
+    getDoc(prodcuctDoc)
+    .then((res) => setData({ id:res.id, ...res.data()}))
+}, [id]);
       
 
   return (
