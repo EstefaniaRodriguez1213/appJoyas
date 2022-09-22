@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const CartView = () => {
     const { cart, quitarProductoCarrito, precioTotal, limpiar} = useContext(CartContext)
-  
     return (
       <>
       {cart.length > 0 
@@ -24,19 +23,18 @@ const CartView = () => {
       </thead>
       <tbody>
       {cart.map((item) => 
-            <tr key={item.id}>                                                    
-                <td>{item.nombreArticulo}</td>
+            <tr key={item.producto.id}>                                                    
+                <td>{item.producto.nombreArticulo}</td>
                 <td>{item.cant}</td>
-                <td>{item.precio}</td>
-                <td><CloseButton onClick={() => quitarProductoCarrito(item.id)} /></td>
+                <td>{item.producto.precio}</td>
+                <td><CloseButton onClick={() => quitarProductoCarrito(item.producto.id)} /></td>
             </tr>
                 )} 
              <tr>
-                {<td colSpan="6"> <p className= "d-flex justify-content-center">  TOTAL: $ { precioTotal()}</p></td>}
+                {<td colSpan="6"> <p className= "d-flex justify-content-center"> PRECIO TOTAL: $ { precioTotal()}</p></td>}
              </tr> 
            
               <Link to="/fincompra" className="btn btn-primary" type="button" onClick={()=>limpiar()}>Finalizar Compra</Link>
-           
       </tbody>
     </Table> 
         </div>
