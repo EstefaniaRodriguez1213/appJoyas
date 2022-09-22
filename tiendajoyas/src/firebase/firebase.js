@@ -1,11 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import "dotenv/config"
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: `${process.env.REACT_APP_APIKEY}`,
   authDomain: "react-joyas.firebaseapp.com",
   projectId: "react-joyas",
   storageBucket: "react-joyas.appspot.com",
