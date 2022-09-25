@@ -7,7 +7,7 @@ const Items = ({ productos }) => {
   return (
     <div>
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={`../${productos.image}`} />
+        <Card.Img variant="top" src={productos.image} />
         <Card.Body>
           <Card.Title>{productos.nombreArticulo}</Card.Title>
           <Link to={`/detalles/${productos.id}`}>

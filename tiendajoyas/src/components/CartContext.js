@@ -13,6 +13,7 @@ const CartProvider = (props) => {
             const newCart = cart.filter(
                     (elem) => elem.producto.id !== item.producto.id);
             setCart([...newCart, {producto : item.producto, cant : newCant}]);
+            console.log(cart);
         }else{
             setCart([...cart, {producto, cant}]) 
         }

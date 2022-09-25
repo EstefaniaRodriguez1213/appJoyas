@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { CartContext } from './CartContext';
 import Table from 'react-bootstrap/Table';
-import { CloseButton } from 'react-bootstrap';
+import { Button, CloseButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -33,8 +33,11 @@ const CartView = () => {
              <tr>
                 {<td colSpan="6"> <p className= "d-flex justify-content-center"> PRECIO TOTAL: $ { precioTotal()}</p></td>}
              </tr> 
-           
-              <Link to="/fincompra" className="btn btn-primary" type="button" onClick={()=>limpiar()}>Finalizar Compra</Link>
+              <Link to="/productos" className="btn btn-success" type="button">Seguir comprando</Link>
+              <Link to="/fincompra" className="btn btn-primary" type="button">Finalizar Compra</Link>
+              <Button className="btn btn-warning" onClick={()=>limpiar()}>
+                Vaciar carrito
+              </Button>
       </tbody>
     </Table> 
         </div>
