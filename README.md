@@ -1,4 +1,4 @@
-# appJoyas
+# Tu Joyita 
 Bienvenidos a mi repositorio!
 Esta aplicacion fue creada con ReactJS.
 
