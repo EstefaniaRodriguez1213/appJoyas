@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {db} from '../firebase/firebase.js';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc , doc, updateDoc} from "firebase/firestore";
 import { CartContext } from "./CartContext";
 
 const FinCompra = () => {
@@ -37,8 +37,20 @@ const FinCompra = () => {
         const StringOrder = order._key.path.segments[1];
         setorderId(StringOrder);
         console.log(orderId);
+        updateStock();
         limpiar();
     }
+    
+     const updateStock = () => {  
+        cart.map((item) => {
+            const docs = doc(db, 'productos', item.producto.id)  
+            const updStock = item.producto.stock - item.cant;
+            updateDoc(docs, {
+                stock: updStock
+                }
+        )})
+    }
+
     return (
         <>
        { 

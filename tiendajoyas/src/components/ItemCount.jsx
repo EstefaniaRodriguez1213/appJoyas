@@ -24,13 +24,16 @@ const ItemCount = ({ stock, onAdd }) => {
 
   return (
     <div>
-      <div>
+      { stock !==0 ? (
+        <div>
         <Button onClick={handleLess}>-</Button>  {cont}  {' '}
-        <Button onClick={handleAdd}>+</Button>
-      </div>
-      <div>
-      <Button onClick={handonAdd}>Agregar al carrito</Button>
-      </div>
+        <Button onClick={handleAdd}>+</Button> {' '}
+        <Button onClick={handonAdd}>Agregar al carrito</Button>
+      </div>)
+      :
+      <h4>Producto no disponible</h4>
+     
+    }
     </div>
   );
 };
