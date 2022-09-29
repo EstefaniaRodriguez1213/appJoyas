@@ -1,10 +1,12 @@
 import React , {createContext, useState} from 'react';
+import { Card } from 'react-bootstrap';
 
 const CartContext = createContext();
 
 const CartProvider = (props) => {
 
     const [cart, setCart] = useState([]);
+
 
     const agregarProductoCarrito = (producto,cant) => {
         const item = isInCart(producto.id);
@@ -15,7 +17,7 @@ const CartProvider = (props) => {
             setCart([...newCart, {producto : item.producto, cant : newCant}]);
             console.log(cart);
         }else{
-            setCart([...cart, {producto, cant}]) 
+            setCart([...cart, {producto, cant,}])         
         }
     }
     const isInCart = (id) => cart.find((item) => item.producto.id === id);

@@ -21,8 +21,8 @@ useEffect(() => {
 
   return (
     <div className="container">
-      <ItemList data={data}></ItemList>
-    </div>
+         <ItemList data={data}></ItemList>
+      </div>
   );
 };
 

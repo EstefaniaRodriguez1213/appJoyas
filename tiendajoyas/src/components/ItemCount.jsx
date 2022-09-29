@@ -1,8 +1,10 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
 import Button from "react-bootstrap/Button";
+import { CartContext } from "./CartContext";
 
 const ItemCount = ({ stock, onAdd }) => {
-  const [cont, setCont] = useState(0);
+  const [cont, setCont] = useState(1);
+  const {cart} = useContext(CartContext);
 
   function handleAdd() {
     if (cont < stock) {
@@ -20,6 +22,7 @@ const ItemCount = ({ stock, onAdd }) => {
 
   function handonAdd(){
     onAdd(cont)   
+    cart.cant = cont;
 }
 
   return (

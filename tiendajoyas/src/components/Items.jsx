@@ -5,8 +5,10 @@ import {Link} from "react-router-dom"
 
 const Items = ({ productos }) => {
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-3">
+      <Card >
         <Card.Img variant="top" src={productos.image} />
         <Card.Body>
           <Card.Title>{productos.nombreArticulo}</Card.Title>
@@ -15,6 +17,8 @@ const Items = ({ productos }) => {
           </Link>
         </Card.Body>
       </Card>
+      </div>
+    </div>
     </div>
   );
 };

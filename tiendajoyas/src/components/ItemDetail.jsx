@@ -14,6 +14,7 @@ function onAdd(cont){
   data2.stock = data2.stock - cont;
   setshow(true);
 }
+
   return (
     <div>
       <Card style={{ width: "18rem" }}>
