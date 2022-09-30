@@ -1,5 +1,4 @@
 import React , {createContext, useState} from 'react';
-import { Card } from 'react-bootstrap';
 
 const CartContext = createContext();
 
