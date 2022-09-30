@@ -1,5 +1,6 @@
 # Tu Joyita 
 ¡¡¡Bienvenidos a la tienda Tu Joyita!!! 👋✨
+
 <br/>
 ¿Queres saber de que se trata? 💻
 Se trata de un ecommerce de bojouterie. Aqui podras encontrar articulos tales como aros y cadenitas de muy buena calidad!
