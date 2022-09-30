@@ -7,6 +7,8 @@
 Se trata de un ecommerce de bojouterie. Aqui podras encontrar articulos tales como aros y cadenitas de muy buena calidad!
 
 <br/>
+<br/>
+En vez de descargar e instalar toda la aplicacion en tu pc, podes ver su funcionamiento desde aca: https://tujoyita.vercel.app/ 
 
 <br/>
 ¿Que tecnologias? 📕
