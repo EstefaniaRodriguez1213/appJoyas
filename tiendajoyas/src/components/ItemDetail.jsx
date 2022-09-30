@@ -2,6 +2,7 @@ import React , {useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import '../App.css';
 import { CartContext } from "./CartContext";
 
 const ItemDetail = ({ data2 }) => {
@@ -17,9 +18,10 @@ function onAdd(cont){
 
   return (
     <div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={data2.image}/>
+      <Card style={{ width: "18rem" }} >
+        <Card.Img variant="top" src={data2.image} className='card'/>
         <Card.Body>
+        <div className="text-center">
           <Card.Title>{data2.nombreArticulo}</Card.Title>
           <Card.Text>{data2.descripcion}</Card.Text>
           <Card.Text>Precio: ${data2.precio}</Card.Text>
@@ -29,6 +31,7 @@ function onAdd(cont){
                 </Link>
                 ) : <ItemCount stock={data2.stock} onAdd={onAdd}></ItemCount> 
                 }
+          </div>
         </Card.Body>
         <div>
       </div>

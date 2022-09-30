@@ -2,6 +2,8 @@ import React, {useContext, useState} from 'react';
 import {db} from '../firebase/firebase.js';
 import { collection, addDoc , doc, updateDoc} from "firebase/firestore";
 import { CartContext } from "./CartContext";
+import Alert from 'react-bootstrap/Alert';
+import '../App.css';
 
 const FinCompra = () => {
     const [orderId, setorderId] = useState("");
@@ -55,38 +57,43 @@ const FinCompra = () => {
         <>
        { 
         !orderId ?
-            (<div>
+            (
+                <div className="text-center container">
+                <h2>Porfavor, complete los siguientes datos</h2>
         <form>
+        <div className="text-center container">
             <input
             type="text"
-            placeholder='Nombre'
+            placeholder='Nombre Completo'
             name="nombre"
             value={nombreArticulo}
             onChange={onChange}
             >
 
             </input>
-
+            </div>
+            <div className="text-center container">
             <input
-            type="text"
-            placeholder='email'
+            type="email"
+            placeholder='Email'
             name="email"
             value={email}
             onChange={onChange}
             >
-
             </input>
-
+            </div>
+            <div className="text-center container">
             <input
             type="text"
-            placeholder='telefono'
+            placeholder='Telefono'
             name="telefono"
             value={telefono}
             onChange={onChange}
             >
 
             </input>
-
+            </div>
+            <div className="text-center container">
             <input
             type="submit"
             value="Finalizar compra"
@@ -95,14 +102,14 @@ const FinCompra = () => {
             >
 
             </input>
+            </div>
         </form>
             </div>)
                 :
-        <h4>
-        Su order fue generada. Guarde el numero de order brindado a continuacion, ya que se lo pedira el repartidor.
-        <br></br>
-        Nro de orden: {orderId}
-        </h4>
+                <div className="text-center">
+        <Alert variant="primary"> Su order fue generada. Guarde el numero de a continuacion, ya que se lo pedira el repartidor.</Alert>   
+        <Alert variant="primary">Nro de orden: {orderId}</Alert> 
+        </div>
        }
        </>
     );

@@ -13,9 +13,9 @@ function NavBar() {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Link to="/"><img className='logo' src="img/tujoyita.png"></img></Link>
-          <Link to="/productos"><p>Ver todo</p></Link>
-          <Link to="/categoria/aros"><p>Aros</p></Link>
-          <Link to="/categoria/cadenitas"><p>Cadenitas</p></Link>
+          <Link style={{ textDecoration: 'inherit'}} to="/productos"><p>Ver todo</p></Link>
+          <Link style={{ textDecoration: 'inherit'}} to="/categoria/aros"><p>Aros</p></Link>
+          <Link style={{ textDecoration: 'inherit'}} to="/categoria/cadenitas"><p>Cadenitas</p></Link>
            {cantidadArticulosCarrito() > 0 && ( <CartWidget/>) } 
   
         </Container>

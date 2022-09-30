@@ -8,3 +8,15 @@ body{
 .cantidad{
     color: aliceblue;
 }
+.card{
+    width: 100%;
+    height: 100%;
+}
+input {
+    width:50%;
+    color: #0c92ac; 
+    font-weight: bold; 
+    padding: 15px; 
+    border: 2px solid #abecf9; 
+    border-radius: 6px;
+  }

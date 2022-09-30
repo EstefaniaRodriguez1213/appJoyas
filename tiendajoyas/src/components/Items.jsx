@@ -2,24 +2,23 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import {Link} from "react-router-dom"
+import '../App.css';
 
 const Items = ({ productos }) => {
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-md-3">
-      <Card >
-        <Card.Img variant="top" src={productos.image} />
+      <Card style={{ width: '18rem'}}>
+        <Card.Img variant="top" src={productos.image} className="card"/>
         <Card.Body>
-          <Card.Title>{productos.nombreArticulo}</Card.Title>
+          <Card.Title className="text-center">{productos.nombreArticulo}</Card.Title>
           <Link to={`/detalles/${productos.id}`}>
+          <div className="text-center">
           <Button variant="primary">Ver mas</Button>
+          </div>
           </Link>
         </Card.Body>
       </Card>
       </div>
-    </div>
-    </div>
   );
 };
 

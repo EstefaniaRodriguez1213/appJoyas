@@ -3,6 +3,7 @@ import { CartContext } from './CartContext';
 import Table from 'react-bootstrap/Table';
 import { Button, CloseButton } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Alert from 'react-bootstrap/Alert';
 
 
 const CartView = () => {
@@ -32,20 +33,23 @@ const CartView = () => {
                 )} 
              <tr>
                 {<td colSpan="6"> <p className= "d-flex justify-content-center"> PRECIO TOTAL: $ { precioTotal()}</p></td>}
-             </tr> 
-              <Link to="/productos" className="btn btn-success" type="button">Seguir comprando</Link>
-              <Link to="/fincompra" className="btn btn-primary" type="button">Finalizar Compra</Link>
+             </tr>   
+      </tbody>
+    </Table> 
+    <div className="text-center">
+    <Link to="/productos" className="btn btn-success" type="button">Seguir comprando</Link>{' '}
+              <Link to="/fincompra" className="btn btn-primary" type="button">Finalizar Compra</Link>{' '}
               <Button className="btn btn-warning" onClick={()=>limpiar()}>
                 Vaciar carrito
               </Button>
-      </tbody>
-    </Table> 
+    </div>
         </div>
         )
         :
-        <h1> No hay productos agregados al carrito{' '}
-          <Link to="/productos">Ver todos los articulos</Link>
-          </h1>
+        <div className="text-center">
+        <Alert variant="success">No hay productos agregados al carrito</Alert>   
+          <Link style={{ textDecoration: 'inherit'}} className="btn btn-primary" to="/productos">Ver todos los articulos</Link>
+        </div>
       }
       </>
     );
