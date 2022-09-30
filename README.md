@@ -1,9 +1,17 @@
 # Tu Joyita 
-Bienvenidos a mi repositorio!
-Esta aplicacion fue creada con ReactJS.
+¡¡¡Bienvenidos a la tienda Tu Joyita!!! 👋✨
 
-Se trata de un ecommerce de bojouterie. Aqui podran encontrar articulos tales como aros y cadenitas de muy buena calidad!
+<br/>
+¿Queres saber de que se trata? 💻
+<br/>
+Se trata de un ecommerce de bojouterie. Aqui podras encontrar articulos tales como aros y cadenitas de muy buena calidad!
 
-Se utilizaron las siguientes herramientas: React Bootstrap - Firebase - ReactJs
+<br/>
 
-Espero que les guste!
+<br/>
+¿Que tecnologias? 📕
+<br/>
+  <img align="left" style="margin-right:5px" alt="ReactJs" width="50px" src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=400/uploads/users/1125/posts/30546/preview_image/RN.jpg" />
+Esta aplicacion fue creada con ReactJS, React Bootstrap, Firebase 
+¡Espero que les guste!
+✨
