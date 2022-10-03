@@ -1,16 +1,15 @@
 # Tu Joyita 
 
-## _Tienda de bojouterie. Aqui podras encontrar articulos tales como aros y cadenitas de muy buena calidad!
+## Tienda de bojouterie. Aqui podras encontrar articulos tales como aros y cadenitas de muy buena calidad!
 
 Link Live Demo:
 
-<a href="[https://cocky-newton-ccb4fc.netlify.app](https://tujoyita.vercel.app/ )"> <img src="./public/favicon.ico" width="75"> </a>
+<a href="[https://cocky-newton-ccb4fc.netlify.app](https://tujoyita.vercel.app/ )"> <img src="" width="75"> </a>
 
 ## Proyecto Final React.js
 
 - Duracion 7 semanas
 - 4 Hs semanales
-- <a href="https://nodejs.org/es/"> Node.js </a>
 - Componentes, Promesas, asincronia y MAP
 - APIs
 - Routing y Navegacion
