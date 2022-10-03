@@ -4,7 +4,7 @@
 
 Link Live Demo:
 
-<a href="[https://tujoyita.vercel.app](https://tujoyita.vercel.app/ )"> <img src="" width="75"> </a>
+<a href="[https://tujoyita.vercel.app]"> <img src="" width="75"> </a>
 
 ## Proyecto Final React.js
 
