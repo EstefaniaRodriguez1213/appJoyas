@@ -34,9 +34,9 @@ https://tujoyita.vercel.app/
 
 ## Librerias externas a create-react-app utilizadas
 
-- [ReactBootstrap] - React Bootstrap version 2.0.0-beta.6
-- [ReactIcons] - React Icons version 4.2.0
-- [FireBase] - Firebase version 8.9.1
+- [ReactBootstrap] - React Bootstrap
+- [ReactIcons] - React Icons 
+- [FireBase] - Firebase 
 
 [reacticons]: https://react-icons.github.io/react-icons/icons?name=ai
 [reactbootstrap]: https://react-bootstrap.github.io/
