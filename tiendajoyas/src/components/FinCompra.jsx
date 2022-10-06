@@ -13,7 +13,7 @@ const FinCompra = () => {
         email: '',
         telefono: ''
     });
-    const {nombreArticulo, email, telefono} = buyer;
+    const {nombre, email, telefono} = buyer;
 
     const onChange = (e) =>{
         setBuyer(({
@@ -23,7 +23,6 @@ const FinCompra = () => {
         }))
     }
     const onSubmit = (e) =>{
-        console.log(cart);
         e.preventDefault();
         const items = cart.map(e => {return {nombreArticulo: e.producto.nombreArticulo , precio : e.producto.precio, cant: e.cant}}) ;
         const dia = new Date();
@@ -34,23 +33,25 @@ const FinCompra = () => {
     }
 
     const generateOrder = async(data) => {
-        const col = collection (db, "orders");
-        const order = await addDoc(col, data);
-        const StringOrder = order._key.path.segments[1];
-        setorderId(StringOrder);
-        console.log(orderId);
-        updateStock();
-        limpiar();
+        try {
+            const col = collection(db, "Orders")
+            const order = await addDoc(col, data)
+            setorderId(order.id)
+            limpiar()
+            updateStock()
+        } catch (error) {
+            console.log(error)
+        }
     }
     
      const updateStock = () => {  
-        cart.map((item) => {
-            const docs = doc(db, 'productos', item.producto.id)  
-            const updStock = item.producto.stock - item.cant;
-            updateDoc(docs, {
-                stock: updStock
-                }
-        )})
+        cart.forEach(item => {
+            const docRef = doc(db, 'productos', item.producto.id)
+            const updateStock = (item.producto.stock + item.cant) - item.cant;
+            updateDoc(docRef, {
+                stock: updateStock
+            })
+        })
     }
 
     return (
@@ -60,13 +61,13 @@ const FinCompra = () => {
             (
                 <div className="text-center container">
                 <h2>Porfavor, complete los siguientes datos</h2>
-        <form>
+        <form onSubmit={onSubmit} >
         <div className="text-center container">
             <input
             type="text"
             placeholder='Nombre Completo'
             name="nombre"
-            value={nombreArticulo}
+            value={nombre}
             onChange={onChange}
             >
 
@@ -98,7 +99,6 @@ const FinCompra = () => {
             type="submit"
             value="Finalizar compra"
             className='btn btn-success'
-            onClick={onSubmit}
             >
 
             </input>

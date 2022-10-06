@@ -6,7 +6,9 @@ import { CartProvider } from "./components/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
- <CartProvider>
-    <App />
+   <CartProvider>
+      <React.StrictMode>
+         <App />    
+      </React.StrictMode>
  </CartProvider>
 );
