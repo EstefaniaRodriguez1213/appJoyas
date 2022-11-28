@@ -6,10 +6,8 @@ Link Live Demo:
 
 https://tujoyita.vercel.app/
 
-## Proyecto Final React.js
+## Proyecto en React.js
 
-- Duracion 7 semanas
-- 4 Hs semanales
 - Componentes, Promesas, asincronia y MAP
 - APIs
 - Routing y Navegacion
